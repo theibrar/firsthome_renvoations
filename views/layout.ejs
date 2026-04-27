@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- Primary SEO -->
+    <title><%= title %> | First Home Renovations</title>
+    <meta name="description" content="Premium home renovation & remodeling services across all 50 US states. Kitchen remodeling, bathroom renovation, and full home transformations by First Home Renovations.">
+    <meta name="keywords" content="home renovation, kitchen remodeling, bathroom renovation, home remodeling, house renovation, home improvement, contractor matching, renovation estimate, full home remodel, basement finishing, custom design, US home renovation">
+    <meta name="author" content="First Home Renovations">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    <link rel="canonical" href="https://firsthomerenovations.com">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://firsthomerenovations.com">
+    <meta property="og:title" content="<%= title %> | First Home Renovations — Premium Home Remodeling">
+    <meta property="og:description" content="Transform your home with America's trusted renovation network. Get free estimates for kitchen, bathroom, and whole-home remodeling projects.">
+    <meta property="og:image" content="https://firsthomerenovations.com/images/kitchen.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:site_name" content="First Home Renovations">
+    <meta property="og:locale" content="en_US">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="<%= title %> | First Home Renovations">
+    <meta name="twitter:description" content="Premium kitchen & bathroom renovations across America. Get your free estimate today.">
+    <meta name="twitter:image" content="https://firsthomerenovations.com/images/kitchen.png">
+
+    <!-- Geo / Local SEO -->
+    <meta name="geo.region" content="US">
+    <meta name="geo.placename" content="United States">
+    <meta name="ICBM" content="39.8283, -98.5795">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
+    <link rel="apple-touch-icon" href="/images/favicon.svg">
+
+    <!-- Preconnect for Performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "HomeAndConstructionBusiness",
+        "name": "First Home Renovations",
+        "description": "Premium home renovation contractor matching service connecting homeowners with qualified remodeling professionals across the United States.",
+        "url": "https://firsthomerenovations.com",
+        "logo": "https://firsthomerenovations.com/images/logo_final_v2.png",
+        "image": "https://firsthomerenovations.com/images/kitchen.png",
+        "email": "hello@firsthomerenovations.com",
+        "areaServed": {
+            "@type": "Country",
+            "name": "United States"
+        },
+        "serviceType": [
+            "Kitchen Remodeling",
+            "Bathroom Renovation",
+            "Full Home Remodeling",
+            "Basement Finishing",
+            "Custom Home Design"
+        ],
+        "priceRange": "$$-$$$$",
+        "sameAs": [
+            "https://www.facebook.com/firsthomerenovations",
+            "https://www.instagram.com/firsthomerenovations",
+            "https://www.linkedin.com/company/firsthomerenovations"
+        ],
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.9",
+            "reviewCount": "1247"
+        }
+    }
+    </script>
+
+    <!-- FAQ Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "How much does a kitchen renovation cost in the US?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Kitchen renovations in the US typically range from $15,000 to $75,000+, depending on the scope, materials, and your local market. Contact us for a free personalized estimate."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How long does a bathroom remodel take?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "A standard bathroom remodel takes 3-6 weeks. More complex renovations involving structural changes may take 8-12 weeks."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Do you offer free renovation estimates?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes! First Home Renovations provides complimentary consultations and estimates. Submit your project details and we'll connect you with qualified contractors in your area."
+                }
+            }
+        ]
+    }
+    </script>
+
+    <!-- Breadcrumb Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://firsthomerenovations.com"
+            }
+        ]
+    }
+    </script>
+</head>
+<body>
+    <%- include('partials/header') %>
+    
+    <main>
+        <%- body %>
+    </main>
+
+    <%- include('partials/footer') %>
+
+    <script src="/js/main.js"></script>
+    <script>
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+    </script>
+</body>
+</html>

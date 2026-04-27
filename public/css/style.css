@@ -1,0 +1,779 @@
+/* Elegant & Professional Theme for First Home Renovations */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@700;800&display=swap');
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 120px;
+}
+
+:root {
+    --navy: #0F2C4A; /* From new logo */
+    --gold: #C5A059; /* From new logo */
+    --gold-light: #D4B67E;
+    --navy-light: #1A446D;
+    --background: #FFFFFF;
+    --surface: #F4F7F9;
+    --text: #1A1A1A;
+    --text-muted: #555555;
+    --white: #FFFFFF;
+    --glass: rgba(255, 255, 255, 0.95);
+    --shadow: 0 15px 35px rgba(15, 44, 74, 0.1);
+    --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    color: var(--text);
+    background-color: var(--background);
+    line-height: 1.7;
+    overflow-x: hidden;
+}
+
+h1, h2, h3, h4 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    color: var(--navy);
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: var(--transition);
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+.container {
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+/* Header & Nav */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background: var(--navy);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+    transition: var(--transition);
+}
+
+.top-bar {
+    background: rgba(0,0,0,0.2);
+    color: var(--white);
+    padding: 0.5rem 0;
+    font-size: 0.8rem;
+    font-weight: 500;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.top-bar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.top-bar i {
+    color: var(--gold);
+    margin-right: 5px;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;
+}
+
+.logo img {
+    height: 45px;
+    width: auto;
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+
+.nav-links a {
+    font-weight: 600;
+    font-size: 0.85rem;
+    color: var(--white);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    position: relative;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--gold);
+    transition: var(--transition);
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+.cta-button {
+    background: var(--gold);
+    color: var(--white);
+    padding: 0.9rem 2rem;
+    border-radius: 4px;
+    font-weight: 700;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 4px 15px rgba(197, 160, 89, 0.3);
+}
+
+.cta-button:hover {
+    background: var(--navy);
+    transform: translateY(-3px);
+}
+
+/* Hero Section */
+.hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    background: linear-gradient(rgba(15, 44, 74, 0.7), rgba(15, 44, 74, 0.7)), url('../images/kitchen.png');
+    background-size: cover;
+    background-position: center;
+    color: var(--white);
+    text-align: center;
+    padding-top: 100px;
+}
+
+.hero h1 {
+    font-size: 4.5rem;
+    color: var(--white);
+    margin-bottom: 1.5rem;
+    line-height: 1.1;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    max-width: 700px;
+    margin: 0 auto 2.5rem;
+    opacity: 0.9;
+}
+
+/* Section Styling */
+section {
+    padding: 8rem 0;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 5rem;
+}
+
+.section-title h2 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    position: relative;
+    display: inline-block;
+}
+
+.section-title h2::after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background: var(--gold);
+}
+
+.section-title p {
+    color: var(--text-muted);
+    font-size: 1.1rem;
+}
+
+/* Services */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 3rem;
+}
+
+/* Testimonials */
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+.testimonial-card {
+    background: var(--white);
+    padding: 2.5rem;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+    text-align: center;
+    transition: var(--transition);
+    border-top: 5px solid transparent;
+}
+.testimonial-card:hover { border-top-color: var(--gold); transform: translateY(-5px); }
+.testimonial-card .stars { color: var(--gold); margin-bottom: 1rem; font-size: 1.1rem; }
+.testimonial-card .quote { font-style: italic; margin-bottom: 1.5rem; color: var(--text-muted); }
+.testimonial-card .author { font-family: 'Montserrat', sans-serif; font-size: 1rem; color: var(--navy); font-weight: 700; }
+
+/* Portfolio Overlay */
+.portfolio-overlay {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    background: linear-gradient(transparent, rgba(15,44,74,0.9));
+    padding: 2rem;
+    color: var(--white);
+    transform: translateY(100%);
+    transition: var(--transition);
+}
+.portfolio-item:hover .portfolio-overlay { transform: translateY(0); }
+.portfolio-overlay h3 { color: var(--white); margin-bottom: 0.3rem; }
+.portfolio-overlay p { color: var(--gold); margin: 0; font-size: 0.9rem; }
+
+/* Hero buttons */
+.hero-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* Full width form group */
+.full-width-input { grid-column: span 2; }
+
+
+.service-card {
+    background: var(--white);
+    padding: 4rem 3rem;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+    border-top: 5px solid transparent;
+}
+
+.service-card:hover {
+    border-top-color: var(--gold);
+    transform: translateY(-10px);
+}
+
+.service-card i {
+    font-size: 3rem;
+    color: var(--gold);
+    margin-bottom: 2rem;
+}
+
+/* Why Choose Us */
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.feature-item {
+    text-align: center;
+    padding: 2rem;
+}
+
+.feature-item i {
+    font-size: 2.5rem;
+    color: var(--navy);
+    margin-bottom: 1.5rem;
+}
+
+/* Our Process */
+.process-steps {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    position: relative;
+}
+
+.step {
+    text-align: center;
+    z-index: 1;
+}
+
+.step-number {
+    width: 60px;
+    height: 60px;
+    background: var(--navy);
+    color: var(--white);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+    font-size: 1.5rem;
+    font-weight: 700;
+    border: 4px solid var(--gold);
+}
+
+/* Portfolio */
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+}
+
+.portfolio-item {
+    position: relative;
+    height: 600px;
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+.portfolio-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Contact Section - Professional & Elegant Redesign */
+.contact {
+    padding: 10rem 0;
+    background: linear-gradient(rgba(15, 44, 74, 0.95), rgba(15, 44, 74, 0.95)), url('../images/bathroom.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: var(--white);
+}
+
+.contact-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 6rem;
+    align-items: center;
+}
+
+.contact-info h2 {
+    font-size: 3.5rem;
+    color: var(--white);
+    margin-bottom: 2rem;
+    line-height: 1.2;
+}
+
+.contact-info p {
+    font-size: 1.1rem;
+    opacity: 0.8;
+    margin-bottom: 3rem;
+}
+
+.contact-info ul li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+}
+
+.contact-info ul li i {
+    width: 40px;
+    height: 40px;
+    background: rgba(197, 160, 89, 0.2);
+    color: var(--gold);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    margin-right: 20px;
+}
+
+/* Professional Form Styling */
+.contact-form {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(15px);
+    padding: 4rem;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+
+.form-group {
+    margin-bottom: 2rem;
+}
+
+.form-group label {
+    display: block;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--gold);
+    margin-bottom: 0.8rem;
+}
+
+.form-group input, 
+.form-group select, 
+.form-group textarea {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.05);
+    border: none;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+    padding: 1rem 0;
+    color: var(--white);
+    font-family: inherit;
+    font-size: 1rem;
+    transition: var(--transition);
+}
+
+.form-group input:focus, 
+.form-group select:focus, 
+.form-group textarea:focus {
+    outline: none;
+    border-bottom-color: var(--gold);
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.form-group input::placeholder, 
+.form-group textarea::placeholder {
+    color: rgba(255, 255, 255, 0.3);
+}
+
+.form-group select option {
+    background: var(--navy);
+    color: var(--white);
+}
+
+.submit-btn {
+    width: 100%;
+    background: var(--gold);
+    color: var(--white);
+    border: none;
+    padding: 1.2rem;
+    font-size: 1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: var(--transition);
+    margin-top: 1rem;
+}
+
+.submit-btn:hover {
+    background: var(--white);
+    color: var(--navy);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+/* Legal Pages */
+.legal-page {
+    background: var(--white);
+    min-height: 80vh;
+}
+
+.legal-content h3 {
+    font-family: 'Playfair Display', serif;
+    margin-bottom: 1rem;
+}
+
+.legal-content ul {
+    margin-bottom: 1.5rem;
+    padding-left: 1.5rem;
+}
+
+.legal-content ul li {
+    margin-bottom: 0.5rem;
+    list-style: disc;
+}
+
+.legal-content a {
+    color: var(--gold);
+    text-decoration: underline;
+}
+
+/* Footer */
+footer {
+    background: var(--navy);
+    color: var(--white);
+    padding: 5rem 0 2rem;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1.5fr;
+    gap: 4rem;
+    margin-bottom: 4rem;
+}
+
+.footer-col h4 {
+    color: var(--gold);
+    margin-bottom: 2rem;
+    font-size: 1.2rem;
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.footer-col p, .footer-col a {
+    color: rgba(255,255,255,0.7);
+    margin-bottom: 1rem;
+    display: block;
+}
+
+.footer-col a:hover {
+    color: var(--gold);
+}
+
+.social-links {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.social-links a {
+    width: 40px;
+    height: 40px;
+    background: rgba(255,255,255,0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+}
+
+.newsletter-form {
+    display: flex;
+    margin-top: 1rem;
+}
+
+.newsletter-form input {
+    flex: 1;
+    padding: 0.8rem;
+    border: none;
+    border-radius: 4px 0 0 4px;
+}
+
+.newsletter-form button {
+    background: var(--gold);
+    color: var(--white);
+    border: none;
+    padding: 0 1.5rem;
+    border-radius: 0 4px 4px 0;
+    cursor: pointer;
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(255,255,255,0.1);
+    padding-top: 2rem;
+    text-align: center;
+    font-size: 0.9rem;
+    color: rgba(255,255,255,0.5);
+}
+
+/* ========================================
+   MOBILE HAMBURGER MENU
+   ======================================== */
+.mobile-toggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    z-index: 1001;
+}
+
+.mobile-toggle span {
+    display: block;
+    width: 28px;
+    height: 3px;
+    background: var(--white);
+    margin: 5px 0;
+    border-radius: 3px;
+    transition: var(--transition);
+}
+
+.mobile-toggle.active span:nth-child(1) {
+    transform: rotate(45deg) translate(6px, 6px);
+}
+
+.mobile-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.mobile-toggle.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -6px);
+}
+
+/* ========================================
+   RESPONSIVE: TABLET (max-width: 992px)
+   ======================================== */
+@media (max-width: 992px) {
+    /* Header & Nav */
+    .mobile-toggle { display: block; }
+
+    .nav-links {
+        position: fixed;
+        top: 0; right: -100%;
+        width: 280px; height: 100vh;
+        background: var(--navy);
+        flex-direction: column;
+        padding: 6rem 2rem 2rem;
+        gap: 0;
+        transition: right 0.4s ease;
+        box-shadow: -5px 0 30px rgba(0,0,0,0.3);
+        z-index: 1000;
+        overflow-y: auto;
+    }
+    .nav-links.active { right: 0; }
+    .nav-links a { padding: 1rem 0; border-bottom: 1px solid rgba(255,255,255,0.1); font-size: 1rem; width: 100%; }
+    .nav-links a::after { display: none; }
+    .nav-links .cta-button { margin-top: 1rem; text-align: center; }
+
+    /* Hero */
+    .hero { height: auto; min-height: 80vh; padding: 9rem 1.5rem 5rem; }
+    .hero h1 { font-size: 2.8rem; }
+    .hero p { font-size: 1rem; }
+    .hero-buttons { flex-direction: column; align-items: center; }
+    .hero-buttons a { width: 100%; max-width: 280px; text-align: center; }
+
+    /* Sections */
+    section { padding: 5rem 0; }
+    .section-title { margin-bottom: 3rem; }
+    .section-title h2 { font-size: 2.2rem; }
+    .section-title p { font-size: 1rem; }
+
+    /* Features */
+    .features-grid { grid-template-columns: 1fr 1fr; }
+
+    /* Services */
+    .services-grid { grid-template-columns: 1fr; gap: 2rem; }
+    .service-card { padding: 3rem 2rem; }
+
+    /* Process */
+    .process-steps { grid-template-columns: 1fr 1fr; }
+
+    /* Portfolio */
+    .portfolio-grid { grid-template-columns: 1fr; }
+    .portfolio-item { height: 380px; }
+    .portfolio-overlay { transform: translateY(0); }
+
+    /* Testimonials */
+    .testimonials-grid { grid-template-columns: 1fr; }
+
+    /* Contact */
+    .contact { padding: 5rem 0; background-attachment: scroll; }
+    .contact-wrapper { grid-template-columns: 1fr; gap: 3rem; }
+    .contact-info h2 { font-size: 2.5rem; }
+    .contact-form { padding: 2.5rem; }
+    .form-row { grid-template-columns: 1fr; gap: 0; }
+    .full-width-input { grid-column: span 1; }
+
+    /* Footer */
+    .footer-grid { grid-template-columns: 1fr 1fr; gap: 3rem; }
+
+    /* Legal Pages */
+    .legal-page { padding: 10rem 0 5rem !important; }
+}
+
+/* ========================================
+   RESPONSIVE: SMALL TABLET (max-width: 768px)
+   ======================================== */
+@media (max-width: 768px) {
+    /* Top Bar */
+    .top-bar { display: none; }
+
+    /* Features */
+    .features-grid { grid-template-columns: 1fr; }
+
+    /* Hero */
+    .hero h1 { font-size: 2.4rem; }
+
+    /* Process */
+    .process-steps { grid-template-columns: 1fr 1fr; gap: 2rem; }
+
+    /* Contact */
+    .contact-info ul li { font-size: 0.95rem; }
+
+    /* Footer */
+    .footer-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+    .newsletter-form { flex-direction: column; gap: 0.5rem; }
+    .newsletter-form input { border-radius: 4px; }
+    .newsletter-form button { border-radius: 4px; padding: 0.8rem 1rem; }
+}
+
+/* ========================================
+   RESPONSIVE: MOBILE (max-width: 480px)
+   ======================================== */
+@media (max-width: 480px) {
+    .container { padding: 0 1rem; }
+
+    /* Logo */
+    .logo img { height: 32px; }
+
+    /* Hero */
+    .hero { min-height: 65vh; padding: 7rem 1rem 4rem; }
+    .hero h1 { font-size: 1.9rem; line-height: 1.2; }
+    .hero p { font-size: 0.9rem; margin-bottom: 2rem; }
+
+    /* Sections */
+    section { padding: 4rem 0; }
+    .section-title h2 { font-size: 1.8rem; }
+    .section-title p { font-size: 0.9rem; }
+
+    /* Service Cards */
+    .service-card { padding: 2rem 1.5rem; }
+    .service-card i { font-size: 2.2rem; }
+
+    /* Process */
+    .process-steps { grid-template-columns: 1fr; gap: 1.5rem; }
+    .step-number { width: 50px; height: 50px; font-size: 1.2rem; }
+
+    /* Portfolio */
+    .portfolio-item { height: 240px; }
+
+    /* Contact */
+    .contact { padding: 4rem 0; }
+    .contact-info h2 { font-size: 1.8rem; }
+    .contact-form { padding: 1.5rem; }
+
+    /* Footer */
+    .footer-bottom p { font-size: 0.7rem; }
+    .footer-bottom a { display: inline; }
+    .social-links { justify-content: center; }
+
+    /* Legal Pages */
+    .legal-page { padding: 8rem 0 4rem !important; }
+    .legal-page h1 { font-size: 1.8rem !important; }
+    .legal-content h3 { font-size: 1.1rem; }
+}
+
+/* ========================================
+   RESPONSIVE: SMALL PHONES (max-width: 360px)
+   ======================================== */
+@media (max-width: 360px) {
+    .hero h1 { font-size: 1.6rem; }
+    .cta-button { padding: 0.8rem 1.2rem; font-size: 0.8rem; }
+    .nav-links { width: 100%; }
+    .section-title h2 { font-size: 1.5rem; }
+    .contact-form { padding: 1rem; }
+}
