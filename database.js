@@ -17,8 +17,17 @@ db.serialize(() => {
             name TEXT NOT NULL,
             email TEXT NOT NULL,
             phone TEXT,
+            zip TEXT,
             service TEXT,
+            property_type TEXT,
+            homeowner TEXT,
+            budget TEXT,
+            timeline TEXT,
             message TEXT,
+            consent INTEGER,
+            ip_address TEXT,
+            trusted_form_url TEXT,
+            jornaya_lead_id TEXT,
             created_at DATETIME DEFAULT CURRENT_TIMESTAMP
         )
     `);

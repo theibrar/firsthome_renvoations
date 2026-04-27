@@ -333,18 +333,72 @@ section {
 }
 
 /* Portfolio */
-.portfolio-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
+/* Portfolio Slider */
+.portfolio-slider-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+.portfolio-slider-container {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
     gap: 2rem;
+    padding: 1rem 0 3rem;
+    scrollbar-width: none; /* Hide scrollbar for Firefox */
+    -ms-overflow-style: none; /* Hide scrollbar for IE/Edge */
+    scroll-behavior: smooth;
+}
+
+.portfolio-slider-container::-webkit-scrollbar {
+    display: none; /* Hide scrollbar for Chrome/Safari */
 }
 
 .portfolio-item {
+    flex: 0 0 calc(50% - 1rem); /* Show 2 items at a time */
+    scroll-snap-align: start;
     position: relative;
     height: 600px;
     overflow: hidden;
-    border-radius: 8px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
 }
+
+.slider-nav {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.slider-arrow {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: var(--white);
+    color: var(--navy);
+    border: 2px solid var(--gold);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: var(--transition);
+    font-size: 1.2rem;
+}
+
+.slider-arrow:hover {
+    background: var(--gold);
+    color: var(--white);
+    transform: scale(1.1);
+}
+
+@media (max-width: 992px) {
+    .portfolio-item {
+        flex: 0 0 100%;
+        height: 450px;
+    }
+}
+
 
 .portfolio-item img {
     width: 100%;
@@ -438,11 +492,27 @@ section {
     background: rgba(255, 255, 255, 0.05);
     border: none;
     border-bottom: 2px solid rgba(255, 255, 255, 0.2);
-    padding: 1rem 0;
+    padding: 1rem 1rem 1rem 0;
     color: var(--white);
     font-family: inherit;
     font-size: 1rem;
     transition: var(--transition);
+    height: 60px;
+    border-radius: 0;
+}
+
+.form-group select {
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23C5A059' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 18px;
+    padding-right: 40px;
+}
+
+.form-group textarea {
+    height: auto;
+    padding-top: 1.5rem;
 }
 
 .form-group input:focus, 
@@ -462,6 +532,7 @@ section {
     background: var(--navy);
     color: var(--white);
 }
+
 
 .submit-btn {
     width: 100%;
@@ -777,3 +848,152 @@ footer {
     .section-title h2 { font-size: 1.5rem; }
     .contact-form { padding: 1rem; }
 }
+
+/* Multi-step Form Styles */
+.form-progress {
+    position: relative;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.1);
+    margin-bottom: 4rem;
+    border-radius: 2px;
+}
+
+.progress-bar {
+    position: absolute;
+    top: 0; left: 0;
+    height: 100%;
+    width: 50%;
+    background: var(--gold);
+    transition: var(--transition);
+    border-radius: 2px;
+}
+
+.progress-steps {
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    top: -13px; left: 0; right: 0;
+}
+
+.step-indicator {
+    width: 30px;
+    height: 30px;
+    background: var(--navy-light);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--white);
+    transition: var(--transition);
+}
+
+.step-indicator.active {
+    background: var(--gold);
+    border-color: var(--gold);
+    box-shadow: 0 0 15px rgba(197, 160, 89, 0.5);
+}
+
+.form-step {
+    display: none;
+    animation: fadeIn 0.5s ease;
+}
+
+.form-step.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.form-buttons {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+.back-btn {
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    color: var(--white);
+    padding: 1.2rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 700;
+    transition: var(--transition);
+}
+
+.back-btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: var(--white);
+}
+
+/* Custom Checkbox */
+.consent-box {
+    margin-bottom: 2rem;
+}
+
+.checkbox-container {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 1.4;
+    user-select: none;
+}
+
+.checkbox-container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0; width: 0;
+}
+
+.checkmark {
+    position: absolute;
+    top: 0; left: 0;
+    height: 22px; width: 22px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+}
+
+.checkbox-container:hover input ~ .checkmark {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.checkbox-container input:checked ~ .checkmark {
+    background: var(--gold);
+    border-color: var(--gold);
+}
+
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+.checkbox-container input:checked ~ .checkmark:after {
+    display: block;
+}
+
+.checkbox-container .checkmark:after {
+    left: 8px; top: 4px;
+    width: 5px; height: 10px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
+.consent-text {
+    display: block;
+    margin-top: -2px;
+}
+
